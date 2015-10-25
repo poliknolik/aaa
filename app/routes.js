@@ -20,6 +20,12 @@ module.exports = function(app, passport) {
 
 	// process the login form
 	app.post('/login', passport.authenticate('local-login'), function(req, res) {
+		if (req.body.remember) {
+          req.session.cookie.maxAge = 1000 * 60 * 3;
+        } else {
+          req.session.cookie.expires = false;
+        }
+		
 		res.send({
                     email: req.user.local.email,
                     role: req.user.local.role

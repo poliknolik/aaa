@@ -1,12 +1,12 @@
 angular.module('aaa')
 .controller('LoginCtrl', ['$rootScope', '$scope', '$location', '$window', 'Auth', function($rootScope, $scope, $location, $window, Auth) {
 
-    //$scope.rememberme = true;
+    $scope.rememberme = true;
     $scope.login = function() {
         Auth.login({
                 email: $scope.user.email,
-                password: $scope.user.password//,
-                //rememberme: $scope.rememberme 
+                password: $scope.user.password,
+                rememberme: $scope.rememberme 
             },
             function(res) {
                 $location.path($rootScope.redirectToUrlAfterLoginUrl);

@@ -25,10 +25,10 @@ angular.module('aaa')
             }
             return user.role.title === userRoles.user.title || user.role.title === userRoles.admin.title;
         },
-        register: function(user, success, error) {
-            $http.post('/register', user).success(function(res) {
-                changeUser(res);
-                success();
+        signup: function(user, success, error) {
+            $http.post('/signup', user).success(function(user) {
+                changeUser(user);
+                success(user);
             }).error(error);
         },
         login: function(user, success, error) {

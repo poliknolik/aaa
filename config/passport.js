@@ -75,7 +75,7 @@ module.exports = function(passport) {
                 newCompany.streetAddress = req.body.streetAddress;
 
                 // save the user
-                newUser.save(function(err) {
+                /*newUser.save(function(err) {
                     if (err)
                         throw err;
 
@@ -88,7 +88,7 @@ module.exports = function(passport) {
                             throw err;
                         return done(null, newUser);
                     });
-                });
+                });*/return done(null, newUser);
 				
             }
 

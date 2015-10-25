@@ -17,6 +17,7 @@ angular.module('aaa', ['ngRoute', 'ngResource', 'ngAnimate', 'ngCookies'])
         })
         .when('/signup', {
             templateUrl: '/partials/signup.ejs',
+            controller: 'SignUpCtrl',
             access: accessLevels.anon
         })
         .when('/profile', {
